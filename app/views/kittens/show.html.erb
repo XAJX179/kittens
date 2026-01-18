@@ -1,2 +1,5 @@
-<h1>Kittens#show</h1>
-<p>Find me in app/views/kittens/show.html.erb</p>
+<h1>Kitten details:</h1>
+<div class="info">
+  <%= render partial: "info", locals: { kitten: @kitten } %>
+  <%= link_to "Delete", @kitten, data: { turbo_method: :delete } %>
+</div>

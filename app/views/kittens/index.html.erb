@@ -1,2 +1,7 @@
-<h1>Kittens#index</h1>
-<p>Find me in app/views/kittens/index.html.erb</p>
+<h1>All Kittens:</h1>
+<% @kittens.each do |kitten| %>
+  <div class='info'>
+    <%= render partial: "info", locals: { kitten: kitten } %>
+    <%= link_to "Delete", kitten, data: { turbo_method: :delete } %>
+  </div>
+<% end %>
